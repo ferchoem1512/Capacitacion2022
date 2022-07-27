@@ -14,6 +14,8 @@
         <th>Nombre completo</th>
         <th>Telefono</th>
         <th>Correo</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
     </tr>
     <?php
 
@@ -28,7 +30,9 @@
         while ($row=$res->fetch_array()) {
             echo "<tr><td>".$row['apellidoPaterno']." ".$row['apellidoMaterno']." ".$row['nombre']."</td>";
             echo "<td>".$row['telefono']."</td>";
-            echo "<td>".$row['email']."</td></tr>";
+            echo "<td>".$row['email']."</td>";
+            echo "<td><a href='editar.php?idU=".$row['idUsuario']."'>editar</a></td>";
+            echo "<td><a href='eliminar.php?idU=".$row['idUsuario']."'>eliminar</a></td></tr>";
         
         }
     }
